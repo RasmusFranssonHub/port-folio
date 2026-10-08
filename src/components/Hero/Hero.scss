@@ -1,0 +1,66 @@
+@use "../../styles/variables" as *;
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 75px);
+
+  background-color: $color-background;
+  color: $color-text;
+
+  overflow: hidden;
+}
+
+/* Fullstack Developer */
+
+.hero__role {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+
+  font-family: $font-main;
+  font-size: 2rem;
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+/* 00 */
+
+.hero__number {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+
+  font-family: $font-main;
+  font-size: 2rem;
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+/* PORT / FOLIO */
+
+.hero__title {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0px;
+  top: clamp(65px, 8vh, 100px);
+
+  transform: translateX(-50%);
+
+  width: 110%;
+
+  margin: 0;
+
+  font-family: $font-main;
+  font-size: clamp(9rem, min(34vw, 58svh), 31rem);
+  font-weight: 700;
+
+  line-height: 0.78;
+  letter-spacing: 0.3rem;
+
+  text-align: center;
+  white-space: nowrap;
+}

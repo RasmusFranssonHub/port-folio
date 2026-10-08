@@ -1,0 +1,16 @@
+@use "variables" as *;
+@use "mixins" ;
+@use "reset" ;
+@use "typography" ;
+
+.page {
+  width: 100%;
+  max-width: 1460px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}

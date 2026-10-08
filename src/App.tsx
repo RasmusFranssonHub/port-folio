@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import ProjectDetails from "./pages/ProjectDetails/ProjectDetails";
 
 function App() {
-
   return (
-    <div>
-      <h1>Hello, World!</h1>
+    <div className="page">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
