@@ -1,6 +1,8 @@
 import Hero from "../../components/Hero/Hero";
 import Navbar from "../../components/Navbar/navbar";
+import Contact from "../../components/Contact/Contact";
 import About from "../../components/About/About";
+import Projects from "../../components/Projects/Projects";
 
 function Home() {
   return (
@@ -18,11 +20,11 @@ function Home() {
         </section>
 
         <section id="projects">
-          {/* Projects */}
+          <Projects />
         </section>
 
         <section id="contact">
-          {/* Contact */}
+          <Contact />
         </section>
       </main>
     </>
