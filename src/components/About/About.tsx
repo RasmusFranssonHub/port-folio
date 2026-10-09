@@ -75,8 +75,10 @@ function About() {
             har jag fått kombinera det kreativa med det tekniska, 
             och upptäckt hur kul det är att bygga webbapplikationer 
             från idé till verklighet.
+            </p>
  
-            Jag trivs i hela utvecklingsprocessen – från planering och 
+            <p>
+            Jag trivs i hela utvecklingsprocessen - från planering och 
             design till utveckling och lansering. Mitt mål är att fortsätta utvecklas, 
             ta mig an större projekt och arbeta i team där jag kan bidra med både struktur, 
             engagemang och nya idéer.
