@@ -168,34 +168,58 @@
 @media (max-width: 600px) {
   .projects {
     min-height: auto;
-    padding: 4rem 1rem 2rem;
+    padding: 3rem 1rem 2rem;
   }
 
+
+  /*=======================
+      MOBILE TITLE
+  ========================*/
   .projects__number {
     top: 1rem;
     right: 1rem;
 
-    font-size: 0.85rem;
+    font-size: 1.5rem;
   }
 
   .projects__title {
-    padding: 1.5rem 0;
+    padding: 0;
 
     font-size: clamp(3rem, 14vw, 5rem);
     line-height: 0.9;
     letter-spacing: -0.15rem;
   }
 
+    /*=======================
+      MOBILE FILTER
+  ========================*/
+
   .projects__filter {
     gap: 0.75rem;
+    padding: 2rem 1rem;
   }
 
   .projects__filter-options {
     justify-content: flex-start;
     gap: 0.5rem;
+    padding: 0;
   }
 
   .projects__grid {
     grid-template-columns: 1fr;
   }
+
+  .projects__clear {
+    display: none;
+  }
+
+      /*=======================
+      MOBILE PRIJECT GRID
+  ========================*/
+
+  .projects__grid, .project-card {
+    border: none;
+    padding-bottom: 1.5rem ;
+  }
+
 }

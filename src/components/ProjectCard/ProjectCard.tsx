@@ -1,4 +1,5 @@
 import "./ProjectCard.scss";
+import arrowUpRight  from "../../assets/icons/Vector-arrow-upp-right.svg";
 
 type ProjectCardProps = {
   number: string;
