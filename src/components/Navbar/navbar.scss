@@ -44,3 +44,71 @@
   border-top: 1px solid rgba($color-text, 1);
   border-bottom: 1px solid rgba($color-text, 1);
 }
+
+/*==========================================
+    TABLET
+===========================================*/
+
+@media (max-width: 900px) {
+  
+}
+
+
+/*==========================================
+    MOBILE
+===========================================*/
+
+@media (max-width: 600px) {
+  .navbar {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+
+    justify-content: center;
+    gap: 0;
+
+    background-color: $color-dark-background;
+    border-bottom: 1px solid rgba($color-text, 1);
+    border-top: none;
+
+    a {
+      color: $color-background;
+    }
+  }
+
+  .navbar__links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+
+  }
+
+  .navbar__links a {
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .navbar.navbar--sticky {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 1000;
+
+    background-color: $color-background;
+    border-color: rgba($color-text, 0.5);
+
+    a {
+      color: $color-text;
+    }
+  }
+}

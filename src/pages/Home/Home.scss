@@ -1,0 +1,15 @@
+.section-transition {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 25vw, 360px);
+  background: #e8e4e1;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #292929;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+}

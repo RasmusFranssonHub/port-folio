@@ -11,8 +11,9 @@ function Hero() {
         00
       </span>
 
+
       <h1 className="hero__title">
-        PORT-
+        PORT<span className="hero_hyphen">-</span>
         <br />
         FOLIO
       </h1>

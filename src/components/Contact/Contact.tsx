@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import "./Contact.scss";
+import arrowRight from "../../assets/icons/arrow-right 4.svg"
 
 type FormData = {
   name: string;
@@ -119,7 +120,7 @@ export default function Contact() {
           >
             <div className="contact__fields">
               <div className="contact__field">
-                <label htmlFor="name">Namn</label>
+                <label htmlFor="name"></label>
                 <input
                   id="name"
                   name="name"
@@ -140,7 +141,7 @@ export default function Contact() {
               </div>
 
               <div className="contact__field">
-                <label htmlFor="email">E-post</label>
+                <label htmlFor="email"></label>
                 <input
                   id="email"
                   name="email"
@@ -161,7 +162,7 @@ export default function Contact() {
               </div>
 
               <div className="contact__field">
-                <label htmlFor="phone">Telefon</label>
+                <label htmlFor="phone"></label>
                 <input
                   id="phone"
                   name="phone"
@@ -182,7 +183,7 @@ export default function Contact() {
               </div>
 
               <div className="contact__field">
-                <label htmlFor="subject">Ämne</label>
+                <label htmlFor="subject"></label>
                 <input
                   id="subject"
                   name="subject"
@@ -204,7 +205,7 @@ export default function Contact() {
               </div>
 
               <div className="contact__field contact__field--message">
-                <label htmlFor="message">Meddelande</label>
+                <label htmlFor="message"></label>
                 <textarea
                   id="message"
                   name="message"
@@ -228,7 +229,12 @@ export default function Contact() {
 
             <button className="contact__submit" type="submit">
               SKICKA MEDDELANDE
-              <span aria-hidden="true">→</span>
+              <img
+                src={arrowRight}
+                alt=""
+                aria-hidden="true"
+                className="arrow-icon"
+              />
             </button>
 
             {successMessage && (
@@ -245,7 +251,12 @@ export default function Contact() {
             <span className="contact__footer-value">
               rasmus.fransson11@gmail.com
             </span>
-            <span aria-hidden="true">→</span>
+              <img
+                src={arrowRight}
+                alt=""
+                aria-hidden="true"
+                className="arrow-icon"
+              />
           </a>
 
           <a
@@ -255,7 +266,12 @@ export default function Contact() {
           >
             <span className="contact__footer-label">LINKEDIN</span>
             <span className="contact__footer-value">LinkedIn-profil</span>
-            <span aria-hidden="true">→</span>
+              <img
+                src={arrowRight}
+                alt=""
+                aria-hidden="true"
+                className="arrow-icon"
+              />
           </a>
 
           <a
@@ -265,7 +281,12 @@ export default function Contact() {
           >
             <span className="contact__footer-label">GITHUB</span>
             <span className="contact__footer-value">GitHub-profil</span>
-            <span aria-hidden="true">→</span>
+              <img
+                src={arrowRight}
+                alt=""
+                aria-hidden="true"
+                className="arrow-icon"
+              />
           </a>
 
           <div className="contact__location">
@@ -273,7 +294,12 @@ export default function Contact() {
             <span className="contact__footer-value">
               Härnösand, Sverige
             </span>
-            <span aria-hidden="true">→</span>
+              <img
+                src={arrowRight}
+                alt=""
+                aria-hidden="true"
+                className="arrow-icon"
+              />
           </div>
         </footer>
       </div>

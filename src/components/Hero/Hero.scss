@@ -62,3 +62,19 @@
   text-align: center;
   white-space: nowrap;
 }
+
+/*==========================================
+    MOBILE
+===========================================*/
+
+@media (max-width: 600px) {
+  .hero {
+    position: relative;
+    min-height: 100svh;
+  }
+
+    .hero__title .hero_hyphen {
+    display: none;
+  }
+}
+
