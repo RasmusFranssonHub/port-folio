@@ -56,6 +56,7 @@ function About() {
         </div>
 
         <img
+            className="about__image"
             src={datorHome}
             alt="Arbetsplats med dator"
         />

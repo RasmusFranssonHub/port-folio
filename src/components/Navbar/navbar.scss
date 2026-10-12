@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 7rem;
 
   padding: 0 15rem;
 
@@ -27,6 +26,12 @@
       opacity: 0.5;
     }
   }
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
 /* ========================================
@@ -75,7 +80,7 @@
 
     background-color: $color-dark-background;
     border-bottom: 1px solid rgba($color-text, 1);
-    border-top: none;
+    border-top: 1px solid rgba($color-background, 1);
 
     a {
       color: $color-background;
