@@ -1,6 +1,44 @@
 
 @use "../../styles/variables" as *;
 
+.project-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+  border: 1px solid rgba($color-text, 0.7);
+}
+
+.project-card:first-child {
+  border-left: 0;
+  border-top: 0;
+}
+
+.project-card:nth-child(3n + 2) {
+  border-top: 0;
+}
+
+.project-card:nth-child(3n) {
+  border-right: 0;
+  border-top: 0;
+}
+
+.project-card:nth-child(3n + 1) {
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.project-card:nth-child(5) {
+  border-bottom: 0;
+}
+
+.project-card:last-child {
+  border-right: 0;
+  border-bottom: 0;
+}
+
 .project-card__link {
   display: block;
   height: 100%;
@@ -13,7 +51,10 @@
   aspect-ratio: 450 / 168;
   overflow: hidden;
   background-color: $color-background;
+  padding: 0.5rem;
 }
+
+
 
 .project-card__image img {
   display: block;
@@ -38,16 +79,24 @@
 
 .project-card__info {
   display: flex;
+  align-items: center;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 0.6rem 0.75rem 0.75rem;
+}
+
+.project-card__arrow {
+  width: 1rem;
+  height: 1rem;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .project-card__number {
   flex-shrink: 0;
   font-size: 1rem;
   font-weight: 400;
-  color: rgba($color-text, 0.7);
+  color: rgba($color-text, 1);
 }
 
 .project-card__title {
@@ -68,5 +117,15 @@
 @media (prefers-reduced-motion: reduce) {
   .project-card__image img {
     transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    border: none;
+  }
+
+  .project-card__image {
+    padding: 0;
   }
 }

@@ -14,3 +14,22 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
+
+@media (min-height: 1500px) {
+  .about {
+    margin-bottom: 2rem;
+  }
+
+  .projects {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact {
+    margin-top: 2rem;
+  }
+
+  .section-transition {
+    display: none;
+  }
+}

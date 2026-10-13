@@ -37,48 +37,53 @@ function Projects() {
       {/* Projektgrid */}
       <div className="projects__grid">
         <ProjectCard
-            number="01"
-            title="Offertor"
-            image={offertorImage}
-            alt="Förhandsvisning av Offertor"
+          number="01"
+          title="Offertor"
+          slug="offertor"
+          image={offertorImage}
+          alt="Förhandsvisning av Offertor"
         />
 
         <ProjectCard
-            number="02"
-            title="Back-office"
-            image={backOfficeImage}
-            alt="Förhandsvisning av Back-office"
+          number="02"
+          title="Back-office"
+          slug="back-office"
+          image={backOfficeImage}
+          alt="Förhandsvisning av Back-office"
         />
 
         <ProjectCard
-            number="03"
-            title="Juniper"
-            image={juniperImage}
-            alt="Förhandsvisning av Juniper"
-        />
-        
-
-        <ProjectCard
-            number="04"
-            title="AI SVG Lab"
-            image={aiSvgLabImage}
-            alt="Förhandsvisning av AI SVG Lab"
-        />
-
-                <ProjectCard
-            number="05"
-            title="Book API"
-            image={BookAPIImage}
-            alt="Förhandsvisning av Book API"
+          number="03"
+          title="Juniper"
+          slug="juniper"
+          image={juniperImage}
+          alt="Förhandsvisning av Juniper"
         />
 
         <ProjectCard
-            number="06"
-            title="GB"
-            image={GBImage}
-            alt="Förhandsvisning av GB"
+          number="04"
+          title="AI SVG Lab"
+          slug="ai-svg-lab"
+          image={aiSvgLabImage}
+          alt="Förhandsvisning av AI SVG Lab"
         />
-        </div>
+
+        <ProjectCard
+          number="05"
+          title="Book API"
+          slug="book-api"
+          image={BookAPIImage}
+          alt="Förhandsvisning av Book API"
+        />
+
+        <ProjectCard
+          number="06"
+          title="GB"
+          slug="gb"
+          image={GBImage}
+          alt="Förhandsvisning av GB"
+        />
+      </div>
     </section>
   );
 }

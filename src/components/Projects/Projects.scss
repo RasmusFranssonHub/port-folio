@@ -111,10 +111,6 @@
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  border-top: 1px solid rgba($color-text, 1);
-  border-left: 1px solid rgba($color-text, 1);
-
   padding: 0;
   gap: 0;
   padding-top: 2rem;
@@ -127,8 +123,7 @@
 .project-card {
   min-width: 0;
   border: none;
-  border-right: 1px solid rgba($color-text, 1);
-  border-bottom: 1px solid rgba($color-text, 1);
+
 }
 
 
@@ -169,6 +164,7 @@
   .projects {
     min-height: auto;
     padding: 3rem 1rem 2rem;
+    margin-top: 0;
   }
 
 
@@ -222,4 +218,12 @@
     padding-bottom: 1.5rem ;
   }
 
+}
+
+@media (min-height: 1281px) {
+  .projects {
+    min-height: 60vh;
+    height: auto;
+    padding-bottom: 2rem;
+  }
 }

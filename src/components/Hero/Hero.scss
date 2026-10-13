@@ -87,12 +87,12 @@
 
   .hero__role {
     font-size: 1.5rem;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
   }
 
   .hero__number {
     font-size: 1.5rem;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
   }
 
   .hero__title {
@@ -120,4 +120,14 @@
     display: none;
   }
 }
+
+
+@media (min-height: 1281px) {
+  .hero {
+    min-height: 60vh;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+}
+
 
