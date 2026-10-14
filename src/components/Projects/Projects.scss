@@ -55,9 +55,15 @@
 
   padding: 1.5rem 3rem;
 
+
   border-bottom: 0.7px solid rgba($color-text, 0.7);
 
   font-size: 1rem;
+}
+
+.projects__filter button.is-active {
+  background-color: $color-text;
+  color: $color-background;
 }
 
 .projects__filter span {
@@ -69,10 +75,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 4rem;
+  padding: 0 4rem;
 
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .projects__filter button {
