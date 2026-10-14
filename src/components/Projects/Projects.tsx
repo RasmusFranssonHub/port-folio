@@ -24,9 +24,13 @@ function Projects() {
           <button type="button">TypeScript</button>
           <button type="button">JavaScript</button>
           <button type="button">Node.js</button>
+          <button type="button">Express</button>
+          <button type="button">MySQL</button>
+          <button type="button">MongoDB</button>
           <button type="button">API</button>
           <button type="button">Database</button>
           <button type="button">Design</button>
+          <button type="button">Figma</button>
         </div>
 
         <button type="button" className="projects__clear">

@@ -1,3 +1,5 @@
+
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../../data/projects";
 import "./ProjectDetails.scss";
@@ -5,122 +7,175 @@ import "./ProjectDetails.scss";
 function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>();
 
-  const project = projects.find(
-    (project) => project.slug === slug
+  const projectIndex = projects.findIndex(
+    (item) => item.slug === slug
   );
+
+  const project = projects[projectIndex];
+
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const images = project
+    ? [
+        { src: project.image, alt: project.alt },
+        ...project.gallery,
+      ]
+    : [];
+
+  useEffect(() => {
+    setSelectedImage(project?.image ?? "");
+  }, [slug, project?.image]);
 
   if (!project) {
     return (
       <main className="project-details project-details--not-found">
         <p>Projektet kunde inte hittas.</p>
-        <Link to="/#projects">
-          Tillbaka till projekten
-        </Link>
+        <Link to="/#projects">← Tillbaka till projekten</Link>
       </main>
     );
   }
 
+  const previousProject =
+    projects[projectIndex - 1];
+
+  const nextProject =
+    projects[projectIndex + 1];
+
   return (
     <main className="project-details">
-      <nav className="project-details__nav">
-        <Link to="/#projects">
-          ← Tillbaka till projekten
-        </Link>
+      <nav
+        className="project-details__topbar"
+        aria-label="Projekt­navigering"
+      >
+        <div className="project-details__switch">
+          {previousProject ? (
+            <Link
+              to={`/projects/${previousProject.slug}`}
+              aria-label="Föregående projekt"
+            >
+              ←
+            </Link>
+          ) : (
+            <span aria-hidden="true">←</span>
+          )}
 
-        <span>
-          [{project.number}]
-        </span>
+          <span>
+            Projekt&nbsp; {project.number} / 06
+          </span>
+
+          {nextProject ? (
+            <Link
+              to={`/projects/${nextProject.slug}`}
+              aria-label="Nästa projekt"
+            >
+              →
+            </Link>
+          ) : (
+            <span aria-hidden="true">→</span>
+          )}
+        </div>
       </nav>
 
-      <header className="project-details__header">
-        <p className="project-details__eyebrow">
-          Projekt {project.number}
-        </p>
-
-        <h1 className="project-details__title">
-          {project.title}
-        </h1>
-
-        <p className="project-details__intro">
-          {project.description}
-        </p>
-
-        <ul className="project-details__technologies">
-          {project.technologies.map((technology) => (
-            <li key={technology}>{technology}</li>
-          ))}
-        </ul>
-      </header>
-
-      <figure className="project-details__hero">
-        <img
-          src={project.image}
-          alt={project.alt}
-        />
-      </figure>
-
-      <section className="project-details__section">
-        <h2>Om projektet</h2>
-        <p>{project.about}</p>
-      </section>
-
-      <section className="project-details__section">
-        <h2>Min roll</h2>
-        <p>{project.role}</p>
-      </section>
-
-      <section className="project-details__section">
-        <h2>Process och lösning</h2>
-        <p>{project.process}</p>
-      </section>
-
-      {project.gallery.length > 0 && (
-        <section className="project-details__gallery">
-          <h2>Fler vyer</h2>
-
-          <div className="project-details__gallery-grid">
-            {project.gallery.map((image, index) => (
-              <figure key={image.src}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                />
-                <figcaption>
-                  Vy {index + 1}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <footer className="project-details__footer">
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Besök projektet ↗
-          </a>
-        )}
-
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Visa på GitHub ↗
-          </a>
-        )}
-
-        <Link to="/#projects">
-          Alla projekt ↗
+      <div className="project-details__content">
+        <Link
+          className="project-details__back"
+          to="/#projects"
+        >
+          <span aria-hidden="true">←</span>
+          Tillbaka till projekten
         </Link>
-      </footer>
+
+        <div className="project-details__layout">
+          <section className="project-details__info">
+            <p className="project-details__number">
+              [{project.number}]
+            </p>
+
+            <h1 className="project-details__title">
+              {project.title}
+            </h1>
+
+            <p className="project-details__intro">
+              {project.description}
+            </p>
+
+            <div className="project-details__meta">
+              <div>
+                <span className="project-details__label">
+                  Roll
+                </span>
+                <p>{project.role}</p>
+              </div>
+
+              <div>
+                <span className="project-details__label">
+                  Tekniker
+                </span>
+                <p>{project.technologies.join(", ")}</p>
+              </div>
+
+              <div>
+                <span className="project-details__label">
+                  Typ
+                </span>
+                <p>{project.type}</p>
+              </div>
+            </div>
+
+            {project.githubUrl && (
+              <a
+                className="project-details__github"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GITHUB REPO
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </section>
+
+          <section
+            className="project-details__visuals"
+            aria-label="Projektbilder"
+          >
+            <figure className="project-details__hero">
+              <img
+                src={selectedImage || project.image}
+                alt={
+                  images.find(
+                    (image) => image.src === selectedImage
+                  )?.alt ?? project.alt
+                }
+              />
+            </figure>
+
+            {images.length > 1 && (
+              <div className="project-details__gallery">
+                {images.map((image, index) => (
+                  <button
+                    key={`${image.src}-${index}`}
+                    className={`project-details__thumbnail ${
+                      selectedImage === image.src
+                        ? "project-details__thumbnail--active"
+                        : ""
+                    }`}
+                    type="button"
+                    onClick={() => setSelectedImage(image.src)}
+                    aria-label={`Visa projektbild ${index + 1}`}
+                    aria-pressed={selectedImage === image.src}
+                  >
+                    <img src={image.src} alt="" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
     </main>
   );
 }
 
 export default ProjectDetails;
+
