@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../../data/projects";
 import "./ProjectDetails.scss";
+import arrowUpRight from "../../assets/icons/Vector-arrow-upp-right.svg";
+import arrowLeft from "../../assets/icons/arrow-left.svg";
+import arrowRight from "../../assets/icons/arrow-right 4.svg";
 
 function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>();
@@ -53,10 +56,10 @@ function ProjectDetails() {
               to={`/projects/${previousProject.slug}`}
               aria-label="Föregående projekt"
             >
-              ←
+              <img src={arrowLeft} alt="Föregående projekt" />
             </Link>
           ) : (
-            <span aria-hidden="true">←</span>
+            <span aria-hidden="true"><img src={arrowLeft} alt="Föregående projekt" /></span>
           )}
 
           <span>
@@ -68,10 +71,10 @@ function ProjectDetails() {
               to={`/projects/${nextProject.slug}`}
               aria-label="Nästa projekt"
             >
-              →
+              <img src={arrowRight} alt="Nästa projekt" />
             </Link>
           ) : (
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true"> <img src={arrowRight} alt="Nästa projekt" /></span>
           )}
         </div>
       </nav>
@@ -81,7 +84,7 @@ function ProjectDetails() {
           className="project-details__back"
           to="/#projects"
         >
-          <span aria-hidden="true">←</span>
+          <span aria-hidden="true"><img src={arrowLeft} alt="Tillbaka till alla projekt" /></span>
           Tillbaka till projekten
         </Link>
 
@@ -130,7 +133,9 @@ function ProjectDetails() {
                 rel="noreferrer"
               >
                 GITHUB REPO
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">
+                  <img src={arrowUpRight} alt="Arrow to GITHUB" />
+                </span>
               </a>
             )}
           </section>
@@ -149,7 +154,13 @@ function ProjectDetails() {
                 }
               />
             </figure>
-
+          </section>
+            
+        </div>
+          <section 
+          className="project-details__gallery-section"
+          aria-label="Projektbilder"
+          >
             {images.length > 1 && (
               <div className="project-details__gallery">
                 {images.map((image, index) => (
@@ -171,7 +182,6 @@ function ProjectDetails() {
               </div>
             )}
           </section>
-        </div>
       </div>
     </main>
   );

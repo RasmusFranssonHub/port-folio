@@ -2,12 +2,7 @@ import "./Projects.scss";
 import { useState } from "react";
 import { projects } from "../../data/projects";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import offertorImage from "../../assets/pictures/offertor/offertorImage.png";
-import backOfficeImage from "../../assets/pictures/back-office/backOfficeImage.png";
-import juniperImage from "../../assets/pictures/juniper/juniperImage.png";
-import aiSvgLabImage from "../../assets/pictures/ai-svg-lab/aiSvgLabImage.png";
-import BookAPIImage from "../../assets/pictures/book-api/BookAPIImage.png";
-import GBImage from "../../assets/pictures/gb/GBImage.png";
+
 
   function Projects() {
 

@@ -83,7 +83,9 @@ export const projects: Project[] = [
     role: "UI/UX-design",
     technologies: [
       "Design", 
-      "Figma"
+      "Figma",
+      "UI/UX",
+      "SVG"
     ],
     type: "Designprojekt",
     gallery: [
@@ -114,7 +116,14 @@ export const projects: Project[] = [
       "MySQL", 
       "REST API", 
       "Design",
-      "Figma"
+      "Figma",
+      "UI/UX",
+      "SVG",
+      "CSS",
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "MongoDB"
     ],
     type: "Webbapplikation",
     gallery: [
@@ -139,7 +148,13 @@ export const projects: Project[] = [
       "JavaScript", 
       "CSS", 
       "Design", 
-      "Figma"
+      "Figma",
+      "UI/UX",
+      "SVG",
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
     ],
     type: "Webbapplikation",
     gallery: [
@@ -160,7 +175,17 @@ export const projects: Project[] = [
     image: aiSvgLabImage,
     alt: "AI-genererad kampanjbild för Bullens Pilsnerchips med neonljus och TV-shop-tema",
     role: "Design och frontendutveckling",
-    technologies: ["HTML", "SCSS", "JavaScript", "SVG", "GSAP"],
+    technologies: [
+      "HTML", 
+      "SCSS", 
+      "JavaScript", 
+      "SVG", 
+      "GSAP",
+      "Figma",
+      "Design",
+      "UI/UX",
+      "CSS"
+    ],
     type: "Webbplats",
     gallery: [
       { src: aiSvgLabGallery1, alt: "Chips AI design" },
@@ -185,7 +210,14 @@ export const projects: Project[] = [
       "REST API",
       "MongoDB",
       "Node.js",
-      "Express"
+      "Express",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "SCSS",
+      "UI/UX",
+      "Design",
+      "Figma"
     ],
     type: "API",
     gallery: [
@@ -208,7 +240,8 @@ export const projects: Project[] = [
     technologies: [
       "Figma",
       "UI/UX",
-      "Design"
+      "Design",
+      "SVG"
     ],
     type: "Design",
     gallery: [
