@@ -89,13 +89,13 @@ export const projects: Project[] = [
     ],
     type: "Designprojekt",
     gallery: [
-      { src: offertorGallery1, alt: "Figma-design för Offertor" },
       { src: offertorGallery2, alt: "Inloggad vy i Offertor" },
       { src: offertorGallery3, alt: "Landingssida för Offertor" },
       { src: offertorGallery4, alt: "Mobilvy 1 för Offertor" },
       { src: offertorGallery5, alt: "Mobilvy 2 för Offertor" },
       { src: offertorGallery6, alt: "Sektion 1 för Offertor" },
-      { src: offertorGallery7, alt: "Sektion 2 för Offertor" }
+      { src: offertorGallery7, alt: "Sektion 2 för Offertor" },
+      { src: offertorGallery1, alt: "Figma-design för Offertor" }
     ],
     githubUrl: "https://github.com/RasmusFranssonHub/offertor"
   },

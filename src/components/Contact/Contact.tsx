@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import "./Contact.scss";
-import arrowRight from "../../assets/icons/arrow-right 4.svg"
+import arrowRight from "../../assets/icons/arrow-right-white.svg";
 
 type FormData = {
   name: string;
@@ -72,7 +72,7 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newErrors = validateForm();
@@ -83,12 +83,30 @@ export default function Contact() {
       return;
     }
 
-    setSuccessMessage(
-      "Tack för ditt meddelande!"
-    );
+    try {
+      const response = await fetch(
+        "https://formspree.io/f/mzedkvbb",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    setFormData(initialFormData);
-    setErrors({});
+      if (!response.ok) {
+        setSuccessMessage("Kunde inte skicka meddelandet. Försök igen.");
+        return;
+      }
+
+      setSuccessMessage("Tack! Ditt meddelande har skickats.");
+      setFormData(initialFormData);
+      setErrors({});
+    } catch {
+      setSuccessMessage("Något gick fel. Kontrollera din anslutning.");
+    }
   };
 
   return (
@@ -113,11 +131,11 @@ export default function Contact() {
             </p>
           </div>
 
-          <form
-            className="contact__form"
-            onSubmit={handleSubmit}
-            noValidate
-          >
+            <form
+              className="contact__form"
+              onSubmit={handleSubmit}
+              noValidate
+            >
             <div className="contact__fields">
               <div className="contact__field">
                 <label htmlFor="name"></label>
@@ -242,6 +260,7 @@ export default function Contact() {
                 {successMessage}
               </p>
             )}
+
           </form>
         </div>
 
@@ -289,7 +308,12 @@ export default function Contact() {
               />
           </a>
 
-          <div className="contact__location">
+          <a
+            href="https://www.google.se/maps?q=Härnösand"
+            target="_blank"
+            rel="noreferrer"
+            >
+
             <span className="contact__footer-label">PLATS</span>
             <span className="contact__footer-value">
               Härnösand, Sverige
@@ -300,7 +324,7 @@ export default function Contact() {
                 aria-hidden="true"
                 className="arrow-icon"
               />
-          </div>
+          </a>
         </footer>
       </div>
     </section>

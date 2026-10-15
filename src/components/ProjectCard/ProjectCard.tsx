@@ -1,6 +1,8 @@
 import "./ProjectCard.scss";
 import { Link } from "react-router-dom";
 import arrowUpRight from "../../assets/icons/Vector-arrow-upp-right.svg";
+import arrowUpRightBlack from "../../assets/icons/arrowUpRightBlack.svg";
+
 
 type ProjectCardProps = {
   slug: string;
@@ -35,7 +37,7 @@ function ProjectCard({
 
           <h3 className="project-card__title">{title}</h3>
 
-          <img src={arrowUpRight} alt="Arrow to project" className="project-card__arrow" />
+          <img src={arrowUpRightBlack} alt="Arrow to project" className="project-card__arrow" />
         </div>
       </Link>
     </article>

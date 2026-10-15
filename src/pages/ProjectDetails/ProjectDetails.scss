@@ -238,6 +238,9 @@ height: 90px;
   }
 }
 
+
+
+
 /* Felaktig projektsökväg */
 
 .project-details--not-found {
@@ -251,6 +254,61 @@ height: 90px;
   a {
     color: inherit;
   }
+}
+
+@media (min-width: 901px) {
+  .project-details__gallery-section {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .project-details__layout {
+    min-width: 1200px;
+}
+
+  .project-details__gallery-swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .project-details__gallery-swiper .swiper-wrapper {
+    justify-content: center;
+  }
+
+  .project-details__gallery-swiper .swiper-slide {
+    width: 140px !important;
+    flex-shrink: 0;
+  }
+
+  .project-details__gallery-swiper .project-details__thumbnail {
+    display: block;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-details__gallery-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-details__gallery-swiper .swiper-slide {
+  width: auto;
+  min-width: 0;
+}
+
+.project-details__gallery-swiper .project-details__thumbnail {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 3;
+}
 }
 
 /* Surfplatta */
@@ -290,7 +348,7 @@ height: 90px;
 
 
 /* Mobil */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .project-details__topbar {
     min-height: 46px;
   }
@@ -310,13 +368,14 @@ height: 90px;
     font-size: 0.85rem;
   }
 
-  /* Bilden kommer först */
+  /* Layout */
   .project-details__layout {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
+  /* Huvudbild först */
   .project-details__visuals {
     order: 1;
     width: 100%;
@@ -337,47 +396,58 @@ height: 90px;
     object-position: center top;
   }
 
-  /* Tre synliga galleribilder */
-  .project-details__gallery {
-    display: flex;
+  /* Swiper under huvudbilden */
+  .project-details__gallery-section {
+    order: 2;
+    display: block;
     width: 100%;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    height: auto;
+    min-width: 0;
+    margin-top: -1rem;
+    overflow: hidden;
   }
 
-  .project-details__gallery::-webkit-scrollbar {
-    display: none;
+  .project-details__gallery-swiper {
+    width: 100%;
+    overflow: hidden;
   }
 
-  .project-details__thumbnail {
-    flex: 0 0 calc((100% - 1rem) / 3);
-    width: calc((100% - 1rem) / 3);
+  .project-details__gallery-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .project-details__gallery-swiper .swiper-slide {
+    height: auto;
+    min-width: 0;
+  }
+
+  .project-details__gallery-swiper .project-details__thumbnail {
+    display: block;
+    width: 100%;
     max-width: none;
     aspect-ratio: 4 / 3;
-    scroll-snap-align: start;
+    padding: 0;
+    overflow: hidden;
   }
 
-  .project-details__thumbnail img {
+  .project-details__gallery-swiper
+    .project-details__thumbnail img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /* Projektinformation efter galleriet */
+  /* Projektinformation efter Swiper */
   .project-details__info {
-    order: 2;
+    order: 3;
     width: 100%;
-    min-width: 0;
+    padding: 0;
   }
 
   .project-details__number {
     margin-bottom: 0.25rem;
+    padding-bottom: 0;
     font-size: 1.8rem;
   }
 
@@ -395,11 +465,13 @@ height: 90px;
     line-height: 1.45;
   }
 
+  /* Roll, tekniker och typ */
   .project-details__meta {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.5rem;
     margin-top: 1rem;
+    padding-top: 1rem;
 
     > div {
       min-width: 0;
@@ -418,15 +490,22 @@ height: 90px;
     }
 
     p {
+      margin-top: 0.25rem;
       font-size: 0.75rem;
       line-height: 1.35;
+      letter-spacing: normal;
       overflow-wrap: anywhere;
     }
   }
 
+  .project-details__label {
+    font-size: 0.7rem;
+  }
+
+  /* GitHub-knapp */
   .project-details__github {
     width: 100%;
     margin-top: 1.5rem;
+    box-sizing: border-box;
   }
 }
-

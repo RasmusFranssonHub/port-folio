@@ -6,6 +6,9 @@ import "./ProjectDetails.scss";
 import arrowUpRight from "../../assets/icons/Vector-arrow-upp-right.svg";
 import arrowLeft from "../../assets/icons/arrow-left.svg";
 import arrowRight from "../../assets/icons/arrow-right 4.svg";
+import returnArrow from "../../assets/icons/return-arrow-black.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>();
@@ -84,8 +87,8 @@ function ProjectDetails() {
           className="project-details__back"
           to="/#projects"
         >
-          <span aria-hidden="true"><img src={arrowLeft} alt="Tillbaka till alla projekt" /></span>
-          Tillbaka till projekten
+          <span aria-hidden="true"><img src={returnArrow} alt="Tillbaka till startsidan" /></span>
+          Tillbaka till startsidan
         </Link>
 
         <div className="project-details__layout">
@@ -156,16 +159,31 @@ function ProjectDetails() {
             </figure>
           </section>
             
-        </div>
-          <section 
+        <section
           className="project-details__gallery-section"
           aria-label="Projektbilder"
-          >
-            {images.length > 1 && (
-              <div className="project-details__gallery">
-                {images.map((image, index) => (
+        >
+          {images.length > 1 && (
+            <Swiper
+              className="project-details__gallery-swiper"
+              slidesPerView={3}
+              spaceBetween={8}
+              grabCursor
+              watchOverflow
+              breakpoints={{
+                0: {
+                  slidesPerView: 3,
+                  spaceBetween: 8,
+                },
+                901: {
+                  slidesPerView: "auto",
+                  spaceBetween: 8,
+                },
+              }}
+            >
+              {images.map((image, index) => (
+                <SwiperSlide key={`${image.src}-${index}`}>
                   <button
-                    key={`${image.src}-${index}`}
                     className={`project-details__thumbnail ${
                       selectedImage === image.src
                         ? "project-details__thumbnail--active"
@@ -178,10 +196,15 @@ function ProjectDetails() {
                   >
                     <img src={image.src} alt="" />
                   </button>
-                ))}
-              </div>
-            )}
-          </section>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+        </section>
+
+        </div>
+        
+
       </div>
     </main>
   );
