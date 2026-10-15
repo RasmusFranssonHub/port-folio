@@ -51,6 +51,7 @@ import gbGallery4 from "../assets/pictures/gb/sektion.png";
 import gbGallery5 from "../assets/pictures/gb/Skärmklipp.png";
 
 
+
 export interface ProjectImage {
   src: string;
   alt: string;
