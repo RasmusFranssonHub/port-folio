@@ -14,8 +14,8 @@ import offertorGallery2 from "../assets/pictures/offertor/inloggad2.png";
 import offertorGallery3 from "../assets/pictures/offertor/Landing-page.png";
 import offertorGallery4 from "../assets/pictures/offertor/mobil2.png";
 import offertorGallery5 from "../assets/pictures/offertor/mobil3.png";
-import offertorGallery6 from "../assets/pictures/offertor/sektion1.png";
-import offertorGallery7 from "../assets/pictures/offertor/sektion2.png";
+import offertorGallery6 from "../assets/pictures/offertor/responsiv-mobil.png";
+import offertorGallery7 from "../assets/pictures/offertor/sektion1.png";
 
 // for back-office project
 import backOfficeGallery1 from "../assets/pictures/back-office/e-shop-add-kategori.png";
