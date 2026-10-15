@@ -22,10 +22,10 @@ import backOfficeGallery1 from "../assets/pictures/back-office/e-shop-add-katego
 import backOfficeGallery2 from "../assets/pictures/back-office/e-shop-add-product.png";
 import backOfficeGallery3 from "../assets/pictures/back-office/e-shop-kategorier.png";
 import backOfficeGallery4 from "../assets/pictures/back-office/e-shop-produkter.png";
-import backOfficeGallery5 from "../assets/pictures/back-office/skärmklipp.png";
+import backOfficeGallery5 from "../assets/pictures/back-office/Skärmbild.png";
 
 // for juniper project
-import juniperGallery1 from "../assets/pictures/juniper/Skärmklipp.png";
+import juniperGallery1 from "../assets/pictures/juniper/Skärmbild.png";
 import juniperGallery2 from "../assets/pictures/juniper/juniperImage.png";
 import juniperGallery3 from "../assets/pictures/juniper/Footer.png";
 import juniperGallery4 from "../assets/pictures/juniper/carousel-2.png";
@@ -38,7 +38,7 @@ import aiSvgLabGallery4 from "../assets/pictures/ai-svg-lab/CHIPS-GUL.png";
 import aiSvgLabGallery5 from "../assets/pictures/ai-svg-lab/CHIPS-RÖD.png";
 
 // for book-api project
-import bookApiGallery1 from "../assets/pictures/book-api/Skärmklipp.png";
+import bookApiGallery1 from "../assets/pictures/book-api/Skärmbild.png";
 import bookApiGallery2 from "../assets/pictures/book-api/book-info-recension.png";
 import bookApiGallery3 from "../assets/pictures/book-api/book-logged-in.png";
 import bookApiGallery5 from "../assets/pictures/book-api/book-admin.png";
@@ -48,7 +48,7 @@ import gbGallery1 from "../assets/pictures/gb/cookies.png";
 import gbGallery2 from "../assets/pictures/gb/Footer.png";
 import gbGallery3 from "../assets/pictures/gb/produkter.png";
 import gbGallery4 from "../assets/pictures/gb/sektion.png";
-import gbGallery5 from "../assets/pictures/gb/Skärmklipp.png";
+import gbGallery5 from "../assets/pictures/gb/Skärmbild.png";
 
 
 
@@ -250,7 +250,7 @@ export const projects: Project[] = [
       { src: gbGallery2, alt: "Footer" },
       { src: gbGallery3, alt: "Produkter" },
       { src: gbGallery4, alt: "Sektion" },
-      { src: gbGallery5, alt: "Skärmklipp" }
+      { src: gbGallery5, alt: "Skärmbild" }
     ],
     githubUrl: "https://github.com/RasmusFranssonHub/grafiska-vektyg"
   },
