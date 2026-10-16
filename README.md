@@ -1,16 +1,22 @@
-# React + Vite
+## Reflektion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Komponentarkitektur och state
 
-Currently, two official plugins are available:
+Jag har byggt min portfolio med React och TypeScript, med Vite som utvecklingsmiljö och SCSS för styling. Jag har delat upp sidan i mindre, återanvändbara komponenter utifrån deras funktion, exempelvis Hero, About, Projects och Contact. Projektkorten och projektfiltreringen har egna komponenter, vilket gör koden mer strukturerad och enklare att underhålla. Jag har även separerat projektinformationen från presentationen genom att samla den i en egen datafil.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Jag har använt React state där det behövs för att hantera interaktivitet. Exempelvis används state för projektfiltreringen och för kontaktformulärets fält, validering och återkoppling till användaren. React Router används för navigering till separata detaljsidor för projekten. Jag valde dessa tekniker eftersom de passade projektets omfattning och gav mig möjlighet att bygga en responsiv och interaktiv webbplats.
 
-## React Compiler
+### Vad jag skulle göra annorlunda
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Jag är nöjd med mina teknikval och resultatet, särskilt med tanke på att projektet genomfördes under två veckor. Jag tycker att designen och strukturen fungerar bra tillsammans och att jag lyckats skapa en portfolio som känns genomarbetad och personlig. I stället för att göra om några större delar skulle jag vilja fortsätta utveckla projektet med tiden, testa det ytterligare och förfina detaljer utifrån erfarenheter och feedback.
 
-## Expanding the ESLint configuration
+### Användning av AI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Jag har använt AI-verktyg som stöd under utvecklingen. Dels har jag använt AI för att skapa bilder till projektet, dels som ett pedagogiskt stöd när jag stött på nya tekniker eller problem. Jag har exempelvis använt AI för att förstå hur olika lösningar fungerar, felsöka och lära mig nya saker längs vägen. Målet har varit att förstå lösningarna och kunna använda dem i mitt eget projekt, snarare än att enbart kopiera färdig kod.
+
+### Figma prototyp
+
+![Startsida](./src/assets/pictures/readme-pics/Startsida-figma.png)
+![Startsida-mobil](./src/assets/pictures/readme-pics/Mobil-figma.png)
+![Produkt-figma](./src/assets/pictures/readme-pics/produkt-figma.png)
+![Produkt-figma-mobil](./src/assets/pictures/readme-pics/produkt-mobil-figma.png)
