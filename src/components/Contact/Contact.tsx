@@ -24,6 +24,7 @@ export default function Contact() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -78,10 +79,13 @@ export default function Contact() {
     const newErrors = validateForm();
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length > 0) {
-      setSuccessMessage("");
-      return;
-    }
+  if (Object.keys(errors).length > 0) {
+    setErrorMessage("Hoppsan! Du missade något fält.");
+    setSuccessMessage("");
+    return;
+  }
+
+  setErrorMessage("");
 
     try {
       const response = await fetch(
@@ -97,15 +101,17 @@ export default function Contact() {
       );
 
       if (!response.ok) {
-        setSuccessMessage("Kunde inte skicka meddelandet. Försök igen.");
+        setErrorMessage("Kunde inte skicka meddelandet. Försök igen.");
+        setSuccessMessage("");
         return;
       }
 
+      setErrorMessage("");
       setSuccessMessage("Tack! Ditt meddelande har skickats.");
       setFormData(initialFormData);
       setErrors({});
     } catch {
-      setSuccessMessage("Något gick fel. Kontrollera din anslutning.");
+      setErrorMessage("Något gick fel. Kontrollera din anslutning.");
     }
   };
 
@@ -254,6 +260,12 @@ export default function Contact() {
                 className="arrow-icon"
               />
             </button>
+
+            {errorMessage && (
+              <p className="contact__error-msg" role="alert">
+                {errorMessage}
+              </p>
+            )}
 
             {successMessage && (
               <p className="contact__success" role="status">
